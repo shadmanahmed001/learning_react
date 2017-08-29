@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React</title>
+
+  </head>
+  <body>
+    <div id="app">
+      asdf
+    </div>
+
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script>
+    // console.log(React);
+    // console.log(ReactDOM);
+
+    const myButton = React.createElement('button', null, 'Click Me!')
+    // console.log(myButton);
+    var x = document.getElementById('app')
+    ReactDOM.render(myButton, x);
+    </script>
+  </body>
+</html>
