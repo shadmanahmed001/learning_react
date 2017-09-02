@@ -7,19 +7,33 @@
   </head>
   <body>
     <div id="app">
-      asdf
+      <h3>The current time is: <span id="currentTime"></span>.</h3>
     </div>
 
     <script src="node_modules/react/dist/react.js"></script>
     <script src="node_modules/react-dom/dist/react-dom.js"></script>
     <script>
-    // console.log(React);
-    // console.log(ReactDOM);
+    function NewTime(){
+      let x = new Date()
+      document.getElementById('currentTime').innerHTML = x.toLocaleTimeString()
+    }
 
-    const myButton = React.createElement('button', null, 'Click Me!')
-    // console.log(myButton);
-    var x = document.getElementById('app')
-    ReactDOM.render(myButton, x);
+    // setInterval(NewTime, 1000)
+
+    const timer = React.createElement('span', null, setInterval(NewTime, 1000))
+    ReactDOM.render(timer, document.getElementById('currentTime').innerHTML)
+
+    console.log(React);
+    console.log(ReactDOM);
+
+    // const myButton = React.createElement('button', null, 'Click Me!')
+    // const timer = React.createElement('p', null, new Date().toLocaleTimeString())
+    //
+    // console.log(timer);
+    // console.log(typeof timer);
+    // // console.log(myButton);
+    // ReactDOM.render(myButton,  document.getElementById('app'));
+    // ReactDOM.render(timer, document.getElementById('currentTime'));
     </script>
   </body>
 </html>
